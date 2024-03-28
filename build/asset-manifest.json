@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.46f672d1.css",
+    "main.js": "/static/js/main.7f3fa7f3.js",
+    "static/media/salesmanavatar.png": "/static/media/salesmanavatar.d1be69426e50357d46a0.png",
+    "index.html": "/index.html",
+    "main.46f672d1.css.map": "/static/css/main.46f672d1.css.map",
+    "main.7f3fa7f3.js.map": "/static/js/main.7f3fa7f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46f672d1.css",
+    "static/js/main.7f3fa7f3.js"
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Shop AR Online</title>
+  <meta name="description" content="Powered by Shop AR Online" />
+  <link id="favicon" rel="icon" href="https://tokbox.com/developer/favicon.ico" type="image/x-icon" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .video-container {
+      height: calc(56.25vw);
+      width: 100%;
+      max-width: 800px; /* Limit maximum width for better readability */
+      margin-bottom: 20px;
+      display: flex;
+    }
+
+    .video-container video {
+      flex: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    #subscriber {
+      order: 1;
+      /* Subscriber view appears second */
+    }
+
+    #publisher {
+      order: 2;
+      /* Publisher view appears first */
+    }
+
+    #endCallButton {
+      background-color: #ff4d4d;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      order: 3;
+    }
+
+    #endCallButton:hover {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Powered by Shop AR Online</h1>
+  </header>
+  <main>
+    <div id="subscriber" class="video-container"></div>
+    <div id="publisher" class="video-container"></div>
+    <button id="endCallButton" onclick="confirmEndCall()">End Call</button>
+  </main>
+  <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+  <script src="landing.js"></script>
+  <script>
+    // Call startCall function when the page is fully loaded
+    window.onload = function () {
+      startCall();
+    };
+
+    function confirmEndCall() {
+      // Display a confirmation popup
+      const confirmMessage = "Are you sure you want to end the call?";
+      const isConfirmed = window.confirm(confirmMessage);
+
+      // If user confirms, call the endCall function
+      if (isConfirmed) {
+        endCall();
+      }
+      // If user cancels, do nothing
+    }
+  </script>
+</body>
+
+</html>
